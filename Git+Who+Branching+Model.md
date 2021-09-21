@@ -26,28 +26,11 @@ In the following  text:
   - **merge commit**; A commit create by a no-fast-forward merge.
 # Why
 
-Why this workflow was created for a  CI that use JIRA, Bitbucket server (Stash), and Jenkins; that produce Chocolatey, Nuget, NPM and Maven packages.
-The branching model is based on GitFlow with **bugfix/** branch, like suggest  the [BitBucket branching
-model](https://confluence.atlassian.com/bitbucketserver057/using-branches-in-bitbucket-server-945543608.html?utm_campaign=in-app-help&utm_medium=in-app-help&utm_source=stash),
-which give us the possibility to create branches directly from JIRA.
-It's was amended to fit with our [Year.Month.Release\[.Hotfix\]
-versioning
-model](Year.Month.Release[.Hotfix]+versioning+model.html),
-which conforms to the versioning model allowed by Chocolatey packaging
-system. Both of those models are based on the standard models of GitFlow
-with bugfix branches and on SemVer 1.0 with Microsoft 4 numbers
-versioning. Those models were adapted for a larger scope of life cycle
-styles. 
+This workflow was created for a  CI that use JIRA, Bitbucket server (Stash), and Jenkins; that produce Chocolatey, Nuget, NPM and Maven packages. The branching model is based on GitFlow with **bugfix/** branch, like suggest  the [BitBucket branching model](https://confluence.atlassian.com/bitbucketserver057/using-branches-in-bitbucket-server-945543608.html?utm_campaign=in-app-help&utm_medium=in-app-help&utm_source=stash), which give us the possibility to create branches directly from JIRA. It's was amended to fit with our [Year.Month.Release\[.Hotfix\] versioning model](Year.Month.Release[.Hotfix]+versioning+model.html), which conforms to the versioning model allowed by Chocolatey packaging system. Both of those models are based on the standard models of GitFlow with bugfix branches and on SemVer 1.0 with Microsoft 4 numbers versioning. Those models were adapted for a larger scope of life cycle styles. 
 
 # The branching models
 
-GitFlow, itself has a major flaw, long-lived prefixes branches
-will inevitably create merge conflicts and other problems. To avoid
-that,  we simply always kept the whole Git repository tree, up-to-date
-and especially for the trunk (**develop** branch).  We will call that the "Updating"
-process in rest of this document. Most of This process of GitWho has been
-automated in [the GitWho automation
-Jenkins-Libraries](https://github.com/mikeboutch/GitWho-JenkinsLibs).
+GitFlow, itself has a major flaw, long-lived prefixes branches will inevitably create merge conflicts and other problems. To avoid that,  we simply always kept the whole Git repository tree, up-to-date and especially for the trunk (**develop** branch).  We will call that the "Updating" process in rest of this document. Most of This process of GitWho has been automated in [the GitWho automation Jenkins-Libraries](https://github.com/mikeboutch/GitWho-JenkinsLibs).
 
 
 
@@ -218,10 +201,11 @@ Do a PR from **develop** to **master** for releasing.
 
 ![](./media/gitwho-norel.png)
 
-## Second level: Don't use **feature/** branch
+## Fourth level: Don't use **feature/** branch
 
-That option work only if you DONT use Pull Request for your
-development .
+Commit your change directly in **develop**.
+
+![](./media/gitwho-nofea.png)
 
 # Common mistakes:
 
@@ -269,7 +253,7 @@ the **bugfix/** branches,
 
 Basically those branches are not **feature/** branches. Those branches
 are the last place to apply changes.  Their are not the place to apply
-changes of business logic.  The overuse of **hotfix/ **branches or a
+changes of business logic.  The overuse of **hotfix/** branches or a
 over crowded **release/** branches with bug fixes, can be a sign of a
 not so good QA or development process....
 
@@ -302,13 +286,16 @@ be considerate has an emergency patch and a derogation.
 
 ...
 
-## *git revert* : Remove bad or so not ready **feature/** merge in **develop** without rewriting **develop**.
+## *git revert* : Remove bad or so not ready **feature/** merge from **develop** or **release/** without rewriting it.
 
  The *git revert* command can be also used for removing  specific
-unwanted merge commit from the **develop** branch. And you can always
+unwanted merge commit from the **develop** (or **release/**) branch. And you can always
 revert the revert so your **develop** branch will have the reverted
 merge.
 
+## *git revert* : Remove bad commit.
+
+![](./media/gitwho-ex-hf+bad+commit+reverted.png)
 ## The use of feature flag : The best way to kept only one source code source repository.
 
 That is not Git related...
