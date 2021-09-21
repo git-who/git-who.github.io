@@ -44,8 +44,8 @@ styles.
 GitFlow, itself has a major flaw, long-lived prefixes branches
 will inevitably create merge conflicts and other problems. To avoid
 that,  we simply always kept the whole Git repository tree, up-to-date
-and especially for the develop branch.  We will call that the "Updating"
-process in rest of this document. Most of the process of GitWho has been
+and especially for the trunk (**develop** branch).  We will call that the "Updating"
+process in rest of this document. Most of This process of GitWho has been
 automated in [the GitWho automation
 Jenkins-Libraries](https://github.com/mikeboutch/GitWho-JenkinsLibs).
 
@@ -53,7 +53,7 @@ Jenkins-Libraries](https://github.com/mikeboutch/GitWho-JenkinsLibs).
 
 # THE BRANCHES:
 
-# The Main branches or Trunk branches or Permanent branches
+# The Perpetual or Permanent branches
 
 Those branches are always present and must not be deleted. Nobody should
 ever commit directly to those branches. Those branches should be always
@@ -61,18 +61,10 @@ synced, and tracked. 
 
 ## Production or the real release branch: **master**
 
-> This is the ready-to-be-released branch, the production branch. This
-> must only contain what we consider as production-ready. Version are
-> given by tags, which come from the suffix of
-> a **release/** or **hotfix/** branches.  All commits must result
-> from a merge of **release/** or **hotfix/** branches. We name this
-> branch **master**, since **master** is the default branch of Git, so
-> it's will give a simpler way to do Git command or configuring Git
-> related software and that especially for *git clone* command. Normally
-> this should have restricted access, only the release managers or
-> non-developer should approve merge to this branch. 
+> This is the ready-to-be-released branch, the production branch. This must only contain what we consider as production-ready. Version are
+ given by tags, which come from the suffix of  a **release/** or **hotfix/** branches.  All commits must result from a merge of **release/** or **hotfix/** branches. We name this branch **master**, since **master** is the default branch of Git, so it's will give a simpler way to do Git command or configuring Git related software and that especially for *git clone* command. Normally this should have restricted access, only the release managers or non-developer should approve merge to this branch.  
 
-## Development or the real main trunk: **develop **
+## Development, the real main, the trunk or the next release: **develop **
 
 > This is the main branch who represent latest delivered development
 > changes. It's also called integration branch and contain normally
