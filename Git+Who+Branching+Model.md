@@ -28,11 +28,11 @@ In the following  text:
 
 Why this workflow was created for a  CI that use JIRA, Bitbucket server (Stash), and Jenkins; that produce Chocolatey, Nuget, NPM and Maven packages.
 The branching model is based on GitFlow with **bugfix/** branch, like suggest  the [BitBucket branching
-mode](https://confluence.atlassian.com/bitbucketserver057/using-branches-in-bitbucket-server-945543608.html?utm_campaign=in-app-help&utm_medium=in-app-help&utm_source=stash)l,
+model](https://confluence.atlassian.com/bitbucketserver057/using-branches-in-bitbucket-server-945543608.html?utm_campaign=in-app-help&utm_medium=in-app-help&utm_source=stash),
 which give us the possibility to create branches directly from JIRA.
 It's was amended to fit with our [Year.Month.Release\[.Hotfix\]
 versioning
-model]({% link /Year.Month.Release[.Hotfix]+versioning+model.md %}),
+model]({{{site.baseurl}}/Year.Month.Release[.Hotfix]+versioning+model.md),
 which conforms to the versioning model allowed by Chocolatey packaging
 system. Both of those models are based on the standard models of GitFlow
 with bugfix branches and on SemVer 1.0 with Microsoft 4 numbers
