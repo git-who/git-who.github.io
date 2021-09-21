@@ -32,7 +32,7 @@ mode](https://confluence.atlassian.com/bitbucketserver057/using-branches-in-bitb
 which give us the possibility to create branches directly from JIRA.
 It's was amended to fit with our [Year.Month.Release\[.Hotfix\]
 versioning
-model](Year.Month.Release[.Hotfix]+versioning+model.md),
+model](Year.Month.Release\[.Hotfix\]+versioning+model.md),
 which conforms to the versioning model allowed by Chocolatey packaging
 system. Both of those models are based on the standard models of GitFlow
 with bugfix branches and on SemVer 1.0 with Microsoft 4 numbers
