@@ -204,13 +204,19 @@ committed. This branch should be deleted after been finished.
 
 # Downsizing Git who for smaller and/or simpler project.
 
-## First level: Don't use **bugfix/** branches (Use the original GitFlow)
+## First level: use squash merge for **feature/**, **bugfix/** and **hotfix/** branches
 
-Commit change directly in release/ branch.
+## Second level: Don't use **bugfix/** branches (Use the original GitFlow)
 
-## Second level: Don't use **release/** or **hotfix/** branch
+Commit change directly in **release/** branch.
 
-That option work only if you DONT use Pull Request for releasing.
+![](./media/gitwho-nobfrel.png)
+
+## Third level: Don't use **release/** branches
+
+Do a PR from **develop** to **master** for releasing.
+
+![](./media/gitwho-norel.png)
 
 ## Second level: Don't use **feature/** branch
 
