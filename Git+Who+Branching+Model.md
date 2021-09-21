@@ -2,104 +2,6 @@
 
 ![](./media/image1.tmp)
 
-  - [THE BRANCHES:](#GitWhoBranchingModel-THEBRANCHES:)
-
-  - [The Main branches or Trunk branches or Permanent
-    branches](#GitWhoBranchingModel-TheMainbranchesorT)
-    
-      - [Production or the real release
-        branch: master](#GitWhoBranchingModel-Productionortherea)
-    
-      - [Development or the real main
-        trunk: develop ](#GitWhoBranchingModel-Developmentorthere)
-
-  - [Supporting branches or Prefixes branches or Developer
-    workplace](#GitWhoBranchingModel-Supportingbranches)
-    
-      - [feature/...](#GitWhoBranchingModel-feature/...)
-    
-      - [Release preparation
-        branches:](#GitWhoBranchingModel-Releasepreparation)
-    
-      - [release/...](#GitWhoBranchingModel-release/...)
-    
-      - [hotfix/...](#GitWhoBranchingModel-hotfix/...)
-    
-      - [bugfix/...](#GitWhoBranchingModel-bugfix/...)
-
-  - [Downsizing Git who for smaller and/or simpler
-    project.](#GitWhoBranchingModel-DownsizingGitwhofo)
-    
-      - [First level: Don't use bugfix/ branches (Use the original
-        GitFlow)](#GitWhoBranchingModel-Firstlevel:Don'tus)
-    
-      - [Second level: Don't
-        use release/ or hotfix/ branch](#GitWhoBranchingModel-Secondlevel:Don'tu)
-    
-      - [Second level: Don't
-        use feature/ branch](#GitWhoBranchingModel-Secondlevel:Don'tu)
-
-  - [Common mistakes:](#GitWhoBranchingModel-Commonmistakes:)
-    
-      - [Create or use branches outside of the the
-        model.](#GitWhoBranchingModel-Createorusebranche)
-    
-      - [Not doing frequently
-        syncing.](#GitWhoBranchingModel-Notdoingfrequently)
-    
-      - [Doing merge that are not "no
-        fast-forward"](#GitWhoBranchingModel-Doingmergethataren)
-    
-      - [Prefixes branches aren't deleted after been
-        finished.](#GitWhoBranchingModel-Prefixesbranchesar)
-    
-      - [Merge feature/ branch into develop without good testing and/or
-        approval.](#GitWhoBranchingModel-Mergefeature/branc)
-    
-      - [Misuse of release preparation
-        branches.](#GitWhoBranchingModel-Misuseofreleasepre)
-    
-      - [Open prefixes branches too
-        soon.](#GitWhoBranchingModel-Openprefixesbranch)
-    
-      - [Assume that all release are perfectly good and must be
-        deployed.](#GitWhoBranchingModel-Assumethatallrelea)
-    
-      - [Assume that we must create release/ branch from the head
-        of develop, or create hotfix/ from the head
-        of master.](#GitWhoBranchingModel-Assumethatwemustcr)
-
-  - [Advanced GIT.](#GitWhoBranchingModel-AdvancedGIT.)
-    
-      - [Rewriting feature/ and bugfix/ branches: Kept them clean and
-        readable.](#GitWhoBranchingModel-Rewritingfeature/a)
-    
-      - [git revert : Remove bad or so not ready feature/ merge
-        in develop without
-        rewriting develop.](#GitWhoBranchingModel-gitrevert:Removeba)
-    
-      - [The use of feature flag : The best way to kept only one source
-        code source
-        repository.](#GitWhoBranchingModel-Theuseoffeaturefla)
-
-This branching model is based on the [BitBucket branching
-mode](https://confluence.atlassian.com/bitbucketserver057/using-branches-in-bitbucket-server-945543608.html?utm_campaign=in-app-help&utm_medium=in-app-help&utm_source=stash)l,
-which give us the possibility to create branches directly from JIRA.
-It's was amended to fit with our [Year.Month.Release\[.Hotfix\]
-versioning
-model](file:///E:\\display\\GEDDEV\\Year.Month.Release%5b.Hotfix%5d+versioning+model),
-which conforms to the versioning model allowed by Chocolatey packaging
-system. Both of those models are based on the standard models of GitFlow
-with bugfix branches and on SemVer 1.0 with Microsoft 4 numbers
-versioning. Those models were adapted for a larger scope of life cycle
-styles. GitFlow, itself has a major flaw, long-lived prefixes branches
-will inevitably create merge conflicts and other problems. To avoid
-that,  we simply always kept the whole Git repository tree, up-to-date
-and especially for the develop branch.  We will call that the "Updating"
-process in rest of this document. Most of the process of GitWho has been
-automated in [the GitWho automation
-Jenkins-Libraries](file:///E:\\pages\\viewpage.action%3fpageId=103249293).
-
 In the following  text:
 
   - All branches names will be in bold: **master**
@@ -122,6 +24,32 @@ In the following  text:
     Which are changes applied directly by a developer. 
 
   - **merge commit**; A commit create by a no-fast-forward merge.
+# Why
+
+Why this workflow was created for a  CI that use JIRA, Bitbucket server (Stash), and Jenkins; that produce Chocolatey, Nuget, NPM and Maven packages.
+The branching model is based on GitFlow with **bugfix/** branch, like suggest  the [BitBucket branching
+mode](https://confluence.atlassian.com/bitbucketserver057/using-branches-in-bitbucket-server-945543608.html?utm_campaign=in-app-help&utm_medium=in-app-help&utm_source=stash)l,
+which give us the possibility to create branches directly from JIRA.
+It's was amended to fit with our [Year.Month.Release\[.Hotfix\]
+versioning
+model](Year.Month.Release[.Hotfix]+versioning+model.md),
+which conforms to the versioning model allowed by Chocolatey packaging
+system. Both of those models are based on the standard models of GitFlow
+with bugfix branches and on SemVer 1.0 with Microsoft 4 numbers
+versioning. Those models were adapted for a larger scope of life cycle
+styles. 
+
+# The branching models
+
+GitFlow, itself has a major flaw, long-lived prefixes branches
+will inevitably create merge conflicts and other problems. To avoid
+that,  we simply always kept the whole Git repository tree, up-to-date
+and especially for the develop branch.  We will call that the "Updating"
+process in rest of this document. Most of the process of GitWho has been
+automated in [the GitWho automation
+Jenkins-Libraries](https://github.com/mikeboutch/GitWho-JenkinsLibs).
+
+
 
 # THE BRANCHES:
 
