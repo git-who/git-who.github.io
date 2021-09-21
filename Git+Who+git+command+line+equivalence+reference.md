@@ -1,6 +1,6 @@
 # Git Who: git command line equivalence reference
 
-## After the initial commit was pushed of a new repository.
+## After the initial commit was pushed of a new repository
 
 ```sh
 git branch develop
@@ -13,7 +13,7 @@ git push -u origin develop
 git checkout -t origin/develop
 ```
 
-## Syncing **develop** and **master **branches, this should be before any operation listed below
+## Syncing **develop** and **master** branches, this should be before any operation listed below
 
 ```sh
 git fetch --all -p -P -t
@@ -21,7 +21,7 @@ git pull origin develop
 git pull origin master
 ```
 
-## Starting a **feature/** branch, when not done from Jira or BitBucket.
+## Starting a **feature/** branch
 
 ```sh
 git checkout develop
@@ -29,7 +29,7 @@ git checkout -b feature/JIRA-999-example
 git push -u origin feature/JIRA-999-example
 ```
 
-## Syncing a **feature/ ** for the first time, when started from Jira or Bitbucket
+## Syncing a **feature/** for the first time
 
 ```sh
 git checkout -t origin/feature/JIRA-999-example
@@ -43,7 +43,7 @@ git pull
 git push
 ```
 
-**Anywhere**
+## Syncing a **feature/** branch
 
 ```sh
 git pull origin feature/JIRA-999-example
@@ -53,7 +53,7 @@ git push origin feature/JIRA-999-example
 ## Updating a **feature/** branch with the lasted changes of **develop**, when in **feature/JIRA-999-example** branch
 
 ```sh
-git pull origin develop #normally done by the syncing of develop and master brnaches
+git pull origin develop #normally done by the syncing of develop and master branches
 git merge --no-ff develop
 ```
 
@@ -78,15 +78,14 @@ git branch -d feature/JIRA-999-example
 git push origin :feature/JIRA-999-example
 ```
 
-## Starting a **release/** branch, when is not done from BitBucket
-
+## Starting a **release/** branch
 ```sh
 git checkout develop
 git checkout -b release/19.6.4
 git push -u origin release/19.6.4
 ```
 
-## Syncing a **release/ ** for the first time, when started from Bitbucket
+## Syncing a **release/** for the first time
 
 ```sh
 git checkout -t origin/release/19.6.4
@@ -100,13 +99,14 @@ git pull
 git push
 ```
 
-## Syncing a **release/** branch, , when NOT in **release/19.6.4** branch
+## Syncing a **release/** branch,  when NOT in **release/19.6.4** branch
 
 ```sh
 git pull origin release/19.6.4
 git push origin release/19.6.4
 ```
-## Updating **develop **with the lasted changes of **release/**, when in **release/19.6.4** branch
+
+## Updating **develop** with the lasted changes of **release/**, when in **release/19.6.4** branch
 
 ```sh
 git checkout develop
@@ -135,7 +135,7 @@ git push origin :release/19.6.4
 git checkout develop
 ```
 
-## Starting a **bugfix/** branch, when not done from Jira or BitBucket.
+## Starting a **bugfix/** branch
 
 ```sh
 git checkout release/19.6.4
@@ -143,8 +143,7 @@ git checkout -b bugfix/JIRA-999-example
 git push -u origin bugfix/JIRA-999-example
 ```
 
-## Syncing a **bugfix/ ** for the first time, when started from Jira or Bitbucket
-
+## Syncing a **bugfix/** for the first time
 ```sh
 git checkout -t origin/bugfix/JIRA-999-example
 ```
@@ -186,7 +185,7 @@ git branch -d bugfix/JIRA-999-example
 git push origin :bugfix/JIRA-999-example
 ```
 
-## Starting a **hotfix/** branch, when is not done from BitBucket
+## Starting a **hotfix/** branch
 
 ```sh
 git checkout master
@@ -194,13 +193,13 @@ git checkout -b hotfix/19.6.4.1
 git push -u origin hotfix/19.6.4.1
 ```
 
-## Syncing a **hotfix/ ** for the first time, when started from Bitbucket
+## Syncing a **hotfix/ ** for the first time.
 
 ```sh
 git checkout -t origin/hotfix/19.6.4.1
 ```
 
-## Syncing a **hotfix/** branch, when in hotfix/19.6.4.1 branch**
+## Syncing a **hotfix/** branch, when in **hotfix/19.6.4.1** branch
 
 ```sh
 git pull
@@ -215,7 +214,7 @@ git pull origin hotfix/19.6.4.1
 git push origin hotfix/19.6.4.1
 ```
 
-## Updating **release/ **with the lasted changes of **hotfix/**, when in **hotfix/19.6.4.1** branch
+## Updating **release/** with the lasted changes of **hotfix/**, when in **hotfix/19.6.4.1** branch
 
 ```sh
 git checkout release/19.6.5
