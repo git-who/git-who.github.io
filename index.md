@@ -1,2 +1,6 @@
-# this is index.md
+# Welcome to Git-Who
+The better use of GitFlow
+
 [Git-who Branching model](Git+Who+Branching+Model.md)
+
+[Git Who git command line equivalence](Git+Who+git+command+line+equivalence+reference.md)
