@@ -16,11 +16,11 @@ Table of Contents
   - [**release/...**](#release)
   - [**hotfix/...**](#hotfix)
   - [**bugfix/...**](#bugfix)
-- [Downsizing Git who for smaller and/or simpler project](#downsizing-git-who-for-smaller-andor-simpler-project)
-  - [First level: use squash merge for **feature/**, **bugfix/** and **hotfix/** branches](#first-level-use-squash-merge-for-feature-bugfix-and-hotfix-branches)
-  - [Second level: Don't use **bugfix/** branches (Use the original GitFlow)](#second-level-dont-usebugfix-branches-use-the-original-gitflow)
-  - [Third level: Don't use **release/** branches](#third-level-dont-usereleasebranches)
-  - [Fourth level: Don't use **feature/** branch](#fourth-level-dont-usefeature-branch)
+- [Scaling Git-Who to your need.](#scaling-git-who-to-your-need)
+  - [First level: Don't use **bugfix/** branches (Use the original GitFlow)](#first-level-dont-usebugfix-branches-use-the-original-gitflow)
+  - [Second level: Don't use **release/** branches](#second-level-dont-usereleasebranches)
+  - [Third level: Don't use **feature/** branch](#third-level-dont-usefeature-branch)
+  - [For a cleaner and lighter repos: use squash merge for **feature/**, **bugfix/** and **hotfix/** branches](#for-a-cleaner-and-lighter-repos-use-squash-merge-for-feature-bugfix-and-hotfix-branches)
 - [Common mistakes](#common-mistakes)
   - [Create or use branches outside of the the model](#create-or-use-branches-outside-of-the-the-model)
   - [Not doing frequently syncing](#not-doing-frequently-syncing)
@@ -165,29 +165,30 @@ They have the target release version number as suffix branch name. Normally cre
 
 Branch from **release/** and merge back into **release/** normally by a pull request.  You can have many **bugfix/** branches open at the same time. This permit parallel development. Only bug fixes, configuration, documentation or presentation changes, should be committed. This branch should be deleted after been finished.
 
-# Downsizing Git who for smaller and/or simpler project
+# Scaling Git-Who to your need.
 
-## First level: use squash merge for **feature/**, **bugfix/** and **hotfix/** branches
-
-TODO:
-
-## Second level: Don't use **bugfix/** branches (Use the original GitFlow)
+## First level: Don't use **bugfix/** branches (Use the original GitFlow)
 
 Commit change directly in **release/** branch.
 
 ![](./media/gitwho-nobfrel.png)
 
-## Third level: Don't use **release/** branches
+## Second level: Don't use **release/** branches
 
-Do a PR from **develop** to **master** for releasing.
+Do a PR from **develop** to **master** for releasing. That mean that you have no separated staging or pre-production testing.
 
 ![](./media/gitwho-norel.png)
 
-## Fourth level: Don't use **feature/** branch
+## Third level: Don't use **feature/** branch
 
 Commit your change directly in **develop**.
 
 ![](./media/gitwho-nofea.png)
+
+## For a cleaner and lighter repos: use squash merge for **feature/**, **bugfix/** and **hotfix/** branches
+
+By use squash merge on branches that branch out from and are merge back to the same branch. That will eliminate history of those branching and kept a cleaner tree. But you have to use a no fast forward merge for all other merge: **release/** into **master** or **develop**; and **master** into **develop** or **release**. If you use squash for **hotfix/**, don't do update merge from it, wait that it merged into **master** to do the update.
+
 
 # Common mistakes
 
