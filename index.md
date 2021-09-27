@@ -1,6 +1,8 @@
 # Welcome to Git-Who
 The better use of GitFlow
 
+[Why Git-flow based btranching model](Git+Flow+why.md)
+
 [Git-who Branching model](Git+Who+Branching+Model.md)
 
 [Git Who git command line equivalence](Git+Who+git+command+line+equivalence+reference.md)

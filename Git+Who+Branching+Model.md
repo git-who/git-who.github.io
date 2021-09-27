@@ -4,7 +4,6 @@
 
 Table of Contents
 - [Git Who Branching Model](#git-who-branching-model)
-- [Why](#why)
 - [The branching models](#the-branching-models)
 - [THE BRANCHES](#the-branches)
 - [The Perpetual or Permanent branches](#the-perpetual-or-permanent-branches)
@@ -60,9 +59,6 @@ In the following  text:
     Which are changes applied directly by a developer.
 
 - **merge commit**; A commit create by a no-fast-forward merge.
-# Why
-
-  This workflow was created for a  CI that use JIRA, Bitbucket server (Stash), and Jenkins; that produce Chocolatey, Nuget, NPM and Maven packages. The branching model is based on GitFlow with **bugfix/** branch, like suggest  the [BitBucket branching model](https://confluence.atlassian.com/bitbucketserver057/using-branches-in-bitbucket-server-945543608.html?utm_campaign=in-app-help&utm_medium=in-app-help&utm_source=stash), which give us the possibility to create branches directly from JIRA. It's was amended to fit with our [Year.Month.Release\[.Hotfix\] versioning model](Year.Month.Release[.Hotfix]+versioning+model.html), which conforms to the versioning model allowed by Chocolatey packaging system. Both of those models are based on the standard models of GitFlow with bugfix branches and on SemVer 1.0 with Microsoft 4 numbers versioning. Those models were adapted for a larger scope of life cycle styles.
 
 # The branching models
 
