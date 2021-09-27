@@ -1,7 +1,7 @@
 # Welcome to Git-Who
 The better use of GitFlow
 
-[Why Git-flow based btranching model](Git+Flow+why.md)
+[Why Git-flow based branching model](Git+Flow+why.md)
 
 [Git-who Branching model](Git+Who+Branching+Model.md)
 
