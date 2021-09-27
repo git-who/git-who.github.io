@@ -70,11 +70,11 @@ In the following  text:
 
 Those branches are always present and must not be deleted. Nobody should ever commit directly to those branches. Those branches should be always synced, and tracked.
 
-## Production or the real release branch: **master**
+## Production or the real release branch: **master** or **main**
 
   This is the ready-to-be-released branch, the production branch. This must only contain what we consider as production-ready. Version are given by tags, which come from the suffix of  a **release/** or **hotfix/** branches.  All commits must result from a merge of **release/** or **hotfix/** branches. We name this branch **master**, since **master** is the default branch of Git, so it's will give a simpler way to do Git command or configuring Git related software and that especially for *git clone* command. Normally this should have restricted access, only the release managers or non-developer should approve merge to this branch.  
 
-## Development, the real main, the trunk or the next release: **develop**
+## Development, the real main, the trunk or the next release or integration: **develop**
 
   This is the main branch who represent latest delivered development changes. It's also called integration branch and contain normally latest stable codes. Contain normally pull request (merge) from the **feature/** or merge from **release/** or indirect merge from **hotfix/** branches. **develop** normally contain newer code than **master**.  This branch must be updated with all know good changes, since this branch represent the latest know stable codes.
 
